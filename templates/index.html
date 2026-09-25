@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Gästbok</title>
+</head>
+
+<body>
+
+    <h1>Min gästbok</h1>
+
+    <form method="POST">
+        <label for="name">Namn:</label>
+        <input type="text" id="name" name="name" required>
+
+        <br><br>
+
+        <label for="message">Meddelande:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <br><br>
+
+        <button type="submit">Skicka</button>
+    </form>
+
+    <hr>
+
+    <h2>Inlägg</h2>
+
+    {% for post in posts %}
+        <div>
+            <h3>{{ post.name }}</h3>
+            <p>{{ post.message }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+
+</body>
+</html>
